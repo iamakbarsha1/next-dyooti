@@ -16,3 +16,8 @@ declare module "lovedicons/dist/compO" {
   import React from "react";
   export const CompHeartO: React.FC<React.SVGProps<SVGSVGElement>>;
 }
+
+declare module "lovedicons/dist/arrO" {
+  import React from "react";
+  export const ArrChevronRightO: React.FC<React.SVGProps<SVGSVGElement>>;
+}
