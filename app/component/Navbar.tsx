@@ -47,7 +47,7 @@ const Navbar = () => {
           );
         })}
         <div>
-          <Image src={""} width={50} height={50} />
+          <Image alt="profile" src={""} width={50} height={50} />
         </div>
       </section>
     </main>
