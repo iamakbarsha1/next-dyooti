@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { ShopShoppingCartO } from "lovedicons/dist/shopO";
 import { SearSearchFavoriteO } from "lovedicons/dist/searO";
 import { CompHeartO } from "lovedicons/dist/compO";
-import Image from "next/image";
+// import Image from "next/image";
 
 const Navbar = () => {
   const [search, setSearch] = useState("");
@@ -24,7 +24,7 @@ const Navbar = () => {
   ];
 
   return (
-    <main className="w-full p-4 flex items-center justify-evenly">
+    <main className="w-full p-4 flex items-center justify-evenly bg-red-100">
       <section>logo</section>
       <section className="relative flex items-center">
         <input
@@ -46,8 +46,9 @@ const Navbar = () => {
             </div>
           );
         })}
-        <div>
-          <Image alt="profile" src={""} width={50} height={50} />
+        <div className="">
+          <div className="w-10 h-10 bg-red-200 rounded-full"></div>
+          {/* <Image alt="profile" src={""} width={50} height={50} /> */}
         </div>
       </section>
     </main>
