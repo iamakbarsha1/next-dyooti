@@ -1,55 +1,101 @@
 "use client";
-import React, { useState } from "react";
-import { ShopShoppingCartO } from "lovedicons/dist/shopO";
-import { SearSearchFavoriteO } from "lovedicons/dist/searO";
+import React from "react";
 import { CompHeartO } from "lovedicons/dist/compO";
+import Image from "next/image";
 // import Image from "next/image";
+import { GridElement3O } from "lovedicons/dist/gridO";
+import { BusPresentionChartO } from "lovedicons/dist/busO";
+import { SecuSecurityUserO } from "lovedicons/dist/secuO";
+import { DesiLifebuoyO } from "lovedicons/dist/desiO";
+import { ArrChevronDownO } from "lovedicons/dist/arrO";
 
 const Navbar = () => {
-  const [search, setSearch] = useState("");
-
-  const navIcons = [
+  const navContent = [
     {
-      iconName: "Cart",
-      iconLink: "",
-      iconComponent: <ShopShoppingCartO className="w-5 h-5" />,
-      addOns: "",
+      navName: "What We Do",
+      navLink: "",
+      showChevron: true,
+      iconComponent: <ArrChevronDownO className="w-4 h-4" />,
+      navChild: [
+        {
+          header: "ServiceNow",
+          subHeader: "Consult",
+          navChild_iconComponent: <GridElement3O className="w-5 h-5" />,
+          description:
+            "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum",
+        },
+        {
+          header: "ServiceNow",
+          subHeader: "Implement",
+          navChild_iconComponent: <BusPresentionChartO className="w-5 h-5" />,
+          description:
+            "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum",
+        },
+        {
+          header: "ServiceNow",
+          subHeader: "Support",
+          navChild_iconComponent: <SecuSecurityUserO className="w-5 h-5" />,
+          description:
+            "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum",
+        },
+        {
+          header: "ServiceNow",
+          subHeader: "Optmise",
+          navChild_iconComponent: <DesiLifebuoyO className="w-5 h-5" />,
+          description:
+            "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum",
+        },
+      ],
     },
     {
-      iconName: "Favourites",
-      iconLink: "",
-      iconComponent: <CompHeartO className="w-5 h-5" />,
-      addOns: "",
+      navName: "Who Are We",
+      navLink: "",
+      showChevron: true,
+      iconComponent: <ArrChevronDownO className="w-4 h-4" />,
+      navChild: [],
+    },
+    {
+      navName: "Resources",
+      navLink: "",
+      showChevron: true,
+      iconComponent: <ArrChevronDownO className="w-4 h-4" />,
+      navChild: [],
+    },
+    {
+      navName: "Contact",
+      navLink: "",
+      showChevron: false,
+      iconComponent: <ArrChevronDownO className="w-4 h-4" />,
+      navChild: [],
     },
   ];
 
   return (
-    <main className="w-full p-4 flex items-center justify-evenly bg-red-100">
-      <section>logo</section>
-      <section className="relative flex items-center">
-        <input
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          className="px-2.5 py-2 w-80 text-sm rounded-md outline-none"
-          placeholder="Search a Product"
-        />
-        {/* <div className=""> */}
-        <SearSearchFavoriteO className="absolute right-2 top-1/2 transform -translate-y-1/2 w-5 h-5" />
-        {/* </div> */}
+    <main className="relative w-full py-4 px-10 flex items-center justify-between bg-red-100">
+      <section>
+        <Image alt="logo" src="/assets/logo/logo.png" width={100} height={50} />
       </section>
-      <section className="flex gap-7">
-        {navIcons.map((icon) => {
+      <section className="flex items-center gap-10">
+        {navContent?.map((nav, i) => {
           return (
-            <div key={icon.iconName} className="flex flex-col items-center">
-              <div>{icon.iconComponent}</div>
-              <div className="text-xs mt-1">{icon.iconName}</div>
-            </div>
+            <section key={nav?.navName}>
+              <div className="flex items-center justify-center gap-2">
+                <div className="text-sm">{nav?.navName}</div>
+                {nav?.showChevron ? <div>{nav?.iconComponent}</div> : null}
+              </div>
+              <section className="absolute left-0 -bottom-12 w-full bg-cyan-200">
+                <div className="text-primary">{nav?.navChild[i]?.header}</div>
+                <section className="">
+                  <div className="flex items-center">
+                    <div>{nav?.navChild[i]?.navChild_iconComponent}</div>
+                    <div>{nav?.navChild[i]?.subHeader}</div>
+                  </div>
+                  <div>{nav?.navChild[i]?.description}</div>
+                </section>
+              </section>
+            </section>
           );
         })}
-        <div className="">
-          <div className="w-10 h-10 bg-red-200 rounded-full"></div>
-          {/* <Image alt="profile" src={""} width={50} height={50} /> */}
-        </div>
       </section>
     </main>
   );
