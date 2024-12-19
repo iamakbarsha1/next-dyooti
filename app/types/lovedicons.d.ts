@@ -21,3 +21,28 @@ declare module "lovedicons/dist/arrO" {
   import React from "react";
   export const ArrChevronRightO: React.FC<React.SVGProps<SVGSVGElement>>;
 }
+
+declare module "lovedicons/dist/gridO" {
+  import React from "react";
+  export const GridElement3O: React.FC<React.SVGProps<SVGSVGElement>>;
+}
+
+declare module "lovedicons/dist/busO" {
+  import React from "react";
+  export const BusPresentionChartO: React.FC<React.SVGProps<SVGSVGElement>>;
+}
+
+declare module "lovedicons/dist/secuO" {
+  import React from "react";
+  export const SecuSecurityUserO: React.FC<React.SVGProps<SVGSVGElement>>;
+}
+
+declare module "lovedicons/dist/desiO" {
+  import React from "react";
+  export const DesiLifebuoyO: React.FC<React.SVGProps<SVGSVGElement>>;
+}
+
+declare module "lovedicons/dist/arrO" {
+  import React from "react";
+  export const ArrChevronDownO: React.FC<React.SVGProps<SVGSVGElement>>;
+}
