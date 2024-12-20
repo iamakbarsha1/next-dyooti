@@ -1,16 +1,30 @@
-"use client";
-import React from "react";
-import { CompHeartO } from "lovedicons/dist/compO";
+"use client"; // This will ensure this component is treated as client-side only
+
+import React, { useEffect, useState } from "react"; // Import useState for interactivity
 import Image from "next/image";
-// import Image from "next/image";
 import { GridElement3O } from "lovedicons/dist/gridO";
 import { BusPresentionChartO } from "lovedicons/dist/busO";
 import { SecuSecurityUserO } from "lovedicons/dist/secuO";
 import { DesiLifebuoyO } from "lovedicons/dist/desiO";
 import { ArrChevronDownO } from "lovedicons/dist/arrO";
 
+interface NavChild {
+  header: string;
+  subHeader: string;
+  navChild_iconComponent: React.JSX.Element;
+  description: string;
+}
+
+interface NavContent {
+  navName: string;
+  navLink: string;
+  showChevron: boolean;
+  iconComponent: React.JSX.Element;
+  navChild: NavChild[];
+}
+
 const Navbar = () => {
-  const navContent = [
+  const navContent: NavContent[] = [
     {
       navName: "What We Do",
       navLink: "",
@@ -22,28 +36,28 @@ const Navbar = () => {
           subHeader: "Consult",
           navChild_iconComponent: <GridElement3O className="w-5 h-5" />,
           description:
-            "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum",
+            "Aligning objectives and approaches for process optimization",
         },
         {
           header: "ServiceNow",
           subHeader: "Implement",
           navChild_iconComponent: <BusPresentionChartO className="w-5 h-5" />,
           description:
-            "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum",
+            "Implementing swift resolutions of complex customer issues",
         },
         {
           header: "ServiceNow",
           subHeader: "Support",
           navChild_iconComponent: <SecuSecurityUserO className="w-5 h-5" />,
           description:
-            "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum",
+            "High-performance standards guaranteed through the support and stability of robust IT solutions",
         },
         {
           header: "ServiceNow",
           subHeader: "Optmise",
           navChild_iconComponent: <DesiLifebuoyO className="w-5 h-5" />,
           description:
-            "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum",
+            "Develop a strategic roadmap to optimize your ServiceNow environment for enhanced efficiency",
         },
       ],
     },
@@ -70,20 +84,26 @@ const Navbar = () => {
     },
   ];
 
+  const [navData, setNavData] = useState<NavContent[]>([]); // Dynamically handle nav data
+
+  useEffect(() => {
+    setNavData(navContent);
+  }, []);
+
   return (
     <main className="relative w-full py-4 px-10 flex items-center justify-between bg-red-100">
       <section>
         <Image alt="logo" src="/assets/logo/logo.png" width={100} height={50} />
       </section>
       <section className="flex items-center gap-10">
-        {navContent?.map((nav, i) => {
+        {navData?.map((nav, i) => {
           return (
             <section key={nav?.navName}>
               <div className="flex items-center justify-center gap-2">
                 <div className="text-sm">{nav?.navName}</div>
                 {nav?.showChevron ? <div>{nav?.iconComponent}</div> : null}
               </div>
-              <section className="absolute left-0 -bottom-12 w-full bg-cyan-200">
+              <section className="absolute left-0 -bottom-[72px] w-full bg-cyan-200">
                 <div className="text-primary">{nav?.navChild[i]?.header}</div>
                 <section className="">
                   <div className="flex items-center">
