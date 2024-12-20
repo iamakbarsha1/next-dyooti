@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import Navbar from "./component/Navbar";
+// import dynamic from "next/dynamic";
+import TheLayout from "./TheLayout";
+// Dynamic import of TheLayout to prevent hydration issues
+// const TheLayout = dynamic(() => import("./TheLayout"), {
+//   ssr: false,
+// });
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -29,8 +34,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased max-w-7xl w-full h-full bg-zinc-100 mx-auto box-border`}
       >
-        <Navbar />
-        {children}
+        <TheLayout>{children}</TheLayout>
       </body>
     </html>
   );
