@@ -31,8 +31,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning={true}>
+      {/* max-w-7xl max-w-[1500px] */}
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased max-w-7xl w-full h-full bg-zinc-100 mx-auto box-border`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased w-full h-full bg-white mx-auto box-border`}
       >
         <TheLayout>{children}</TheLayout>
       </body>
