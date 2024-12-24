@@ -95,3 +95,7 @@ declare module "lovedicons/dist/esseO" {
   import React from "react";
   export const EsseMenuO: React.FC<React.SVGProps<SVGSVGElement>>;
 }
+declare module "lovedicons/dist/esseO" {
+  import React from "react";
+  export const EsseCloseCircleO: React.FC<React.SVGProps<SVGSVGElement>>;
+}
