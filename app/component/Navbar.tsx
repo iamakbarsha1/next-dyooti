@@ -14,7 +14,10 @@ import { MediaMicrophone2O, MediaVideoSquareO } from "lovedicons/dist/mediaO";
 import { EducTeacherO, EducBookO, EducClipboardO } from "lovedicons/dist/educO";
 import { EsseMenuO } from "lovedicons/dist/esseO";
 import Logo from "./Logo";
-// import NavbarMobile from "./NavbarMobile";
+
+interface NavbarProps {
+  setShowSidebar: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
 interface NavChild {
   subHeader: string;
@@ -31,7 +34,7 @@ interface NavContent {
   navChild: NavChild[];
 }
 
-const Navbar = () => {
+const Navbar: React.FC<NavbarProps> = ({ setShowSidebar }) => {
   // const [mounted, setMounted] = useState(false);
   // const [openNavIndex, setOpenNavIndex] = useState<number | null>(null);
 
@@ -304,7 +307,7 @@ const Navbar = () => {
         ))}
       </div>
       <div className="hidden lg:block w-[100px] h-[50px]"></div>
-      <div className="block lg:hidden">
+      <div className="block lg:hidden" onClick={() => setShowSidebar(true)}>
         <EsseMenuO className="w-6 h-7" />
       </div>
     </nav>
