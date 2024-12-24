@@ -3,7 +3,11 @@ import Logo from "./Logo";
 import { EsseCloseCircleO } from "lovedicons/dist/esseO";
 import { ArrChevronDownO } from "lovedicons/dist/arrO";
 
-const NavbarMobile = () => {
+interface SidebarProps {
+  setShowSidebar: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const Sidebar: React.FC<SidebarProps> = ({ setShowSidebar }) => {
   interface NavChild {
     subHeader: string;
     link: string;
@@ -133,13 +137,18 @@ const NavbarMobile = () => {
       navChild: [],
     },
   ];
+
   return (
-    <main className="p-[30px] w-[300px] h-full bg-red-100">
+    <main className="p-[30px] w-[300px] h-full">
       <section className="mb-5 flex items-center justify-between">
         <Logo />
-        <div>
+        <button
+          onClick={() => {
+            setShowSidebar(false);
+          }}
+        >
           <EsseCloseCircleO className="w-6 h-7 text-black" />
-        </div>
+        </button>
       </section>
 
       <main className="py-3">
@@ -195,4 +204,4 @@ const NavbarMobile = () => {
   );
 };
 
-export default NavbarMobile;
+export default Sidebar;
