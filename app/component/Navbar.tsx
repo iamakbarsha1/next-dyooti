@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 import { GridElement3O } from "lovedicons/dist/gridO";
 import { BusPresentionChartO } from "lovedicons/dist/busO";
@@ -13,6 +13,7 @@ import { UserPeopleO } from "lovedicons/dist/userO";
 import { MediaMicrophone2O, MediaVideoSquareO } from "lovedicons/dist/mediaO";
 import { EducTeacherO, EducBookO, EducClipboardO } from "lovedicons/dist/educO";
 import { EsseMenuO } from "lovedicons/dist/esseO";
+// import NavbarMobile from "./NavbarMobile";
 
 interface NavChild {
   subHeader: string;
@@ -31,7 +32,7 @@ interface NavContent {
 
 const Navbar = () => {
   // const [mounted, setMounted] = useState(false);
-  const [openNavIndex, setOpenNavIndex] = useState<number | null>(null);
+  // const [openNavIndex, setOpenNavIndex] = useState<number | null>(null);
 
   // Handle hydration mismatch by only rendering after mount
   // useEffect(() => {
@@ -47,7 +48,6 @@ const Navbar = () => {
       header: "ServiceNow",
       navChild: [
         {
-          header: "ServiceNow",
           subHeader: "Consult",
           navChild_iconComponent: (
             <GridElement3O className="w-5 h-5 text-primary" />
@@ -56,7 +56,6 @@ const Navbar = () => {
             "Aligning objectives and approaches for process optimization",
         },
         {
-          header: "ServiceNow",
           subHeader: "Implement",
           navChild_iconComponent: (
             <BusPresentionChartO className="w-5 h-5 text-primary" />
@@ -65,7 +64,6 @@ const Navbar = () => {
             "Implementing swift resolutions of complex customer issues",
         },
         {
-          header: "ServiceNow",
           subHeader: "Support",
           navChild_iconComponent: (
             <SecuSecurityUserO className="w-5 h-5 text-primary" />
@@ -74,7 +72,6 @@ const Navbar = () => {
             "High-performance standards guaranteed through the support and stability of robust IT solutions",
         },
         {
-          header: "ServiceNow",
           subHeader: "Optimize",
           navChild_iconComponent: (
             <DesiLifebuoyO className="w-5 h-5 text-primary" />
@@ -213,76 +210,77 @@ const Navbar = () => {
   // }
 
   return (
-    <nav className="relative w-full flex items-center justify-between bg-white px-8 md:px-12 xl:px-40 py-2 lg:py-0 shadow-md">
-      <div>
-        <Image
-          alt="logo"
-          src="/assets/logo/logo.png"
-          width={140}
-          height={38}
-          priority
-        />
-      </div>
-      <div className="hidden lg:flex items-center gap-10">
-        {navContent.map((nav, index) => (
-          <section key={nav.navName} className="group p-5">
-            <button
-              className="py-[6px] lg:py-7 gap-2 flex items-center justify-center group-hover:text-primary"
-              // onClick={() =>
-              //   setOpenNavIndex(openNavIndex === index ? null : index)
-              // }
-              // aria-expanded={openNavIndex === index}
-              type="button"
-            >
-              <span className="text-sm">{nav.navName}</span>
-              {nav.showChevron && (
-                <span
-                  className={`transform transition-transform group-hover:rotate-180`}
-                >
-                  {nav.iconComponent}
-                </span>
-              )}
-
-              {/* The below content will visible when the mouse hovered on the menu button */}
-              {/* invisible group-hover:visible */}
-              {nav?.navChild.length > 0 && (
-                <main
-                  className={`absolute bg-secondary invisible group-hover:visible left-0 top-full ${
-                    nav.navName === navContent[0].navName ? "px-20" : "px-40"
-                  } pt-20 pb-20 w-full text-start shadow-lg rounded-lg z-50`}
-                >
-                  {/* <div className="mb-2">{nav.header}</div> */}
-                  <section
-                    className={`grid ${
-                      nav.navName === navContent[0].navName
-                        ? "grid-cols-4"
-                        : "grid-cols-3"
-                    } gap-10`}
+    <>
+      <nav className="relative w-full flex items-center justify-between bg-white px-8 md:px-12 xl:px-40 py-2 lg:py-0 shadow-md">
+        <div>
+          <Image
+            alt="logo"
+            src="/assets/logo/logo.png"
+            width={140}
+            height={38}
+            priority
+          />
+        </div>
+        <div className="hidden lg:flex items-center gap-10">
+          {navContent.map((nav) => (
+            <section key={nav.navName} className="group p-5">
+              <button
+                className="py-[6px] lg:py-7 gap-2 flex items-center justify-center group-hover:text-primary"
+                // onClick={() =>
+                //   setOpenNavIndex(openNavIndex === index ? null : index)
+                // }
+                // aria-expanded={openNavIndex === index}
+                type="button"
+              >
+                <span className="text-sm">{nav.navName}</span>
+                {nav.showChevron && (
+                  <span
+                    className={`transform transition-transform group-hover:rotate-180`}
                   >
-                    {nav.navChild.map((childNav) => (
-                      <div
-                        key={childNav.subHeader}
-                        className="flex items-start justify-start rounded-md"
-                      >
-                        <div className="flex items-center p-2 mt-1">
-                          {childNav.navChild_iconComponent}
-                        </div>
-                        <section className="p-2 flex flex-col items-start">
-                          <div className="font-semibold text-base text-black">
-                            {childNav.subHeader}
-                          </div>
-                          <div className="text-sm text-gray-600 text-start">
-                            {childNav.description}
-                          </div>
-                        </section>
-                      </div>
-                    ))}
-                  </section>
-                </main>
-              )}
-            </button>
+                    {nav.iconComponent}
+                  </span>
+                )}
 
-            {/* {openNavIndex === index && nav.navChild.length > 0 && (
+                {/* The below content will visible when the mouse hovered on the menu button */}
+                {/* invisible group-hover:visible */}
+                {nav?.navChild.length > 0 && (
+                  <main
+                    className={`absolute bg-secondary invisible group-hover:visible left-0 top-full ${
+                      nav.navName === navContent[0].navName ? "px-20" : "px-40"
+                    } pt-20 pb-20 w-full text-start shadow-lg rounded-lg z-50`}
+                  >
+                    {/* <div className="mb-2">{nav.header}</div> */}
+                    <section
+                      className={`grid ${
+                        nav.navName === navContent[0].navName
+                          ? "grid-cols-4"
+                          : "grid-cols-3"
+                      } gap-10`}
+                    >
+                      {nav.navChild.map((childNav) => (
+                        <div
+                          key={childNav.subHeader}
+                          className="flex items-start justify-start rounded-md"
+                        >
+                          <div className="flex items-center p-2 mt-1">
+                            {childNav.navChild_iconComponent}
+                          </div>
+                          <section className="p-2 flex flex-col items-start">
+                            <div className="font-semibold text-base text-black">
+                              {childNav.subHeader}
+                            </div>
+                            <div className="text-sm text-gray-600 text-start">
+                              {childNav.description}
+                            </div>
+                          </section>
+                        </div>
+                      ))}
+                    </section>
+                  </main>
+                )}
+              </button>
+
+              {/* {openNavIndex === index && nav.navChild.length > 0 && (
               // && mounted
               <div className="absolute left-0 top-full mt-2 w-64 bg-white shadow-lg rounded-lg p-4 z-50">
                 {nav.navChild.map((childNav) => (
@@ -301,14 +299,15 @@ const Navbar = () => {
                 ))}
               </div>
             )} */}
-          </section>
-        ))}
-      </div>
-      <div className="hidden lg:block w-[100px] h-[50px]"></div>
-      <div className="block lg:hidden">
-        <EsseMenuO className="w-6 h-7" />
-      </div>
-    </nav>
+            </section>
+          ))}
+        </div>
+        <div className="hidden lg:block w-[100px] h-[50px]"></div>
+        <div className="block lg:hidden">
+          <EsseMenuO className="w-6 h-7" />
+        </div>
+      </nav>
+    </>
   );
 };
 
