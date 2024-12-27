@@ -46,24 +46,24 @@ export default function Home() {
       name: "Consult",
       description:
         "Aligning Objectives and Approaches for Process Optimization",
-      icon: "",
+      icon: "/assets/icons/boxTick.jpg",
     },
     {
       name: "Implement",
       description: "Implementing Swift Resolutions of Complex Customer Issues",
-      icon: "",
+      icon: "/assets/icons/key.jpg",
     },
     {
       name: "Support",
       description:
         "High-performance Standards Guaranteed Through The Support and Stability of Robust IT Solutions",
-      icon: "",
+      icon: "/assets/icons/unlock.jpg",
     },
     {
       name: "Optimise",
       description:
         "Develop A Strategic Roadmap to Optimize Your ServiceNow Environment For Enhanced Efficiency",
-      icon: "",
+      icon: "/assets/icons/support.svg",
     },
   ];
 
@@ -97,17 +97,28 @@ export default function Home() {
         />
       </section>
       <ClientLogo />
-      <section className="mt-10 my-[60px] px-36">
-        <div className="text-[32px] font-bold text-center">
+      <section className="mt-5 md:mt-10 my-5 lg:my-[60px] px-5 md:px-12 lg:px-36">
+        <div className="text-[28px] md:text-[32px] font-bold text-center">
           Our ServiceNow solutions offer exceptional{" "}
           <br className="hidden md:block" /> performance and come equipped with
           built-in capabilities
+          {/* performance and come equipped with built-in capabilities */}
         </div>
-        <section className="mt-24 gap-5 grid grid-cols-4">
+        <section className="mt-10 md:mt-24 gap-5 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
           {ciso?.map((ciso) => {
             return (
               <section key={ciso.name} className="p-10 shadow-xl rounded-3xl">
-                <div>Icon</div>
+                <div>
+                  <Image
+                    alt={ciso.name}
+                    src={ciso.icon}
+                    width={40}
+                    height={40}
+                    // priority={true}
+                    // fill={true}
+                    // className="object-cover object-center"
+                  />
+                </div>
                 <div className="mt-4 mb-7 text-[22px] font-bold">
                   {ciso.name}
                 </div>
