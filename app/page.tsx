@@ -1,4 +1,4 @@
-import heroLandingImage from "/assets/images/landingPageHero.jpg";
+// import heroLandingImage from "/assets/images/landingPageHero.jpg";
 
 import Image from "next/image";
 
