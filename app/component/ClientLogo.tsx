@@ -39,13 +39,30 @@ const ClientLogo = () => {
       <div className="w-full flex items-center justify-center gap-10 lg:gap-12">
         {clientLogoContent?.map((img) => {
           return (
-            <div key={img?.clientName}>
+            <div key={img?.clientName} className="flex-shrink-0">
               <Image
+                className="object-contain"
+                alt={img?.clientName}
+                src={img?.clientLogo}
+                width={92} // Adjust these values to match the actual size
+                height={32} // Adjust these values to match the actual size
+                sizes="(max-width: 768px) 92px, 
+                  (max-width: 1024px) 128px, 
+                  160px" // Define sizes for responsive behavior
+              />
+              {/* <Image
+                className="w-24 h-10 md:w-32 md:h-12 lg:w-24 lg:h-8"
+                alt={img?.clientName}
+                src={img?.clientLogo}
+                width={0} // Use "0" and rely on Tailwind for width
+                height={0} // Use "0" and rely on Tailwind for height
+              /> */}
+              {/* <Image
                 width={92}
                 height={32}
                 alt={img?.clientName}
                 src={img?.clientLogo}
-              />
+              /> */}
             </div>
           );
         })}
