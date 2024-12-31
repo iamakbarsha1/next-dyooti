@@ -17,6 +17,7 @@ export default {
         custOrange: "#FC6533",
         custYellow: "#FCBD2E",
         custBlue: "#5C91FA",
+        bgGray: "#EBEBEC",
       },
       visibility: ["group-hover"],
     },
