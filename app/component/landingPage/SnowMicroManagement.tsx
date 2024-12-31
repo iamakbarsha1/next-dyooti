@@ -153,7 +153,7 @@ const SnowMicroManagement = () => {
             //   width={0}
             //   height={0}
             //   objectFit="cover"
-            className="absolute w-full h-full object-cover"
+            className="lg:hidden absolute w-full h-full object-cover"
             priority={true}
           />
           <section className="">
