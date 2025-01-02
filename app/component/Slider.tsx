@@ -65,7 +65,7 @@ const ReactSlickSlider: React.FC<SliderProps> = ({ slides }) => {
             alt={slide.header}
             width={300}
             height={200}
-            className="w-full h-48 object-cover"
+            className="w-full h-48 object-cover hover:scale-105 transition-transform ease-in-out duration-300"
           />
           {/* Content Section */}
           <section className="p-5 md:p-8 flex flex-col flex-grow text-start">
