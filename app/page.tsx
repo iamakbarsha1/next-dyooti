@@ -6,6 +6,7 @@ import SnowSolutions from "./component/landingPage/SnowSolutions";
 import SnowMicroManagement from "./component/landingPage/SnowMicroManagement";
 import Testimonials from "./component/landingPage/Testimonials";
 import Insights from "./component/landingPage/Insights";
+import RequestAQuote from "./component/landingPage/RequestAQuote";
 
 // export default function Home() {
 //   return (
@@ -137,6 +138,7 @@ export default function Home() {
       <SnowMicroManagement />
       <Testimonials />
       <Insights />
+      <RequestAQuote />
       {/* dummy */}
       <section className="mt-5 md:mt-10 my-5 lg:my-[60px] px-5 md:px-12 lg:px-36">
         <div className="text-[28px] md:text-[32px] font-bold text-center">
