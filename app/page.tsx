@@ -7,6 +7,8 @@ import SnowMicroManagement from "./component/landingPage/SnowMicroManagement";
 import Testimonials from "./component/landingPage/Testimonials";
 import Insights from "./component/landingPage/Insights";
 import RequestAQuote from "./component/landingPage/RequestAQuote";
+import NewsLetter from "./component/landingPage/NewsLetter";
+import Footer from "./component/landingPage/Footer";
 
 // export default function Home() {
 //   return (
@@ -139,6 +141,8 @@ export default function Home() {
       <Testimonials />
       <Insights />
       <RequestAQuote />
+      <NewsLetter />
+      <Footer />
       {/* dummy */}
       <section className="mt-5 md:mt-10 my-5 lg:my-[60px] px-5 md:px-12 lg:px-36">
         <div className="text-[28px] md:text-[32px] font-bold text-center">
