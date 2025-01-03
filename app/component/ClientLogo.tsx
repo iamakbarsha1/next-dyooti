@@ -36,7 +36,7 @@ const ClientLogo = () => {
 
   return (
     <main className="my-10 lg:my-20 lg:mt-[72px]">
-      <div className="w-full flex items-center justify-center gap-10 lg:gap-12">
+      <div className="w-full flex items-center justify-center gap-10 lg:gap-12 overflow-scroll">
         {clientLogoContent?.map((img) => {
           return (
             <div key={img?.clientName} className="flex-shrink-0">
