@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const SnowSolutions = () => {
   return (
-    <main className="relative px-5 md:px-12 lg:px-36 grid grid-cols-1 lg:grid-cols-2">
+    <main className="relative px-5 md:px-12 lg:px-36 grid grid-cols-1 xl:grid-cols-2">
       {/* <section className=""> */}
       <Image
         alt="pathYellow"
