@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+const { fontFamily } = require("tailwindcss/defaultTheme");
 
 export default {
   content: [
@@ -20,6 +21,12 @@ export default {
         bgGray: "#EBEBEC",
       },
       visibility: ["group-hover"],
+      fontFamily: {
+        // gilroy: ["var(--font-gilroy-light)", "sans-serif"],
+        gilroy: ["var(--font-gilroy-normal)", ...fontFamily.sans],
+        gilroyLight: ["var(--font-gilroy-light)", ...fontFamily.sans],
+        gilroyBold: ["var(--font-gilroy-bold)", ...fontFamily.sans],
+      },
     },
   },
   plugins: [],

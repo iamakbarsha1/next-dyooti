@@ -214,7 +214,7 @@ const Navbar: React.FC<NavbarProps> = ({ setShowSidebar }) => {
   // }
 
   return (
-    <nav className="relative w-full flex items-center justify-between bg-white px-8 md:px-12 xl:px-40 py-2 lg:py-0 shadow-md">
+    <nav className="relative w-full px-8 md:px-12 xl:px-40 py-2 lg:py-0 flex items-center justify-between bg-white shadow-md">
       <Logo />
       {/* <div>
         <Image

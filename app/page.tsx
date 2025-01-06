@@ -78,15 +78,15 @@ export default function Home() {
     <main className="w-screen">
       <section className="relative h-[650px] w-full">
         <div className="absolute z-40 top-0 left-0 bottom-0 right-0 flex items-center justify-center">
-          <div className="h-full flex items-center justify-center text-white font-bold text-center">
+          <div className="h-full flex items-center justify-center text-white text-center">
             <div className="w-full max-w-[950px] flex flex-col items-center justify-center space-y-6 px-4">
               {/* Hero Title */}
-              <div className="text-[50px] lg:text-8xl">
+              <div className="text-[50px] lg:text-8xl font-gilroyBold">
                 We streamline <br /> business processes <br /> with{" "}
                 <span className="text-primary">ServiceNow</span>
               </div>
               {/* Paragraph */}
-              <p className="text-xl font-normal">
+              <p className="text-xl font-gilroy">
                 Modernize antiquated processes through the utilization of
                 ServiceNow’s digital automation features, offering customers an
                 exceptional user experience elevated by the empowerment of AI.
