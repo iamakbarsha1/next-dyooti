@@ -14,6 +14,7 @@ import { MediaMicrophone2O, MediaVideoSquareO } from "lovedicons/dist/mediaO";
 import { EducTeacherO, EducBookO, EducClipboardO } from "lovedicons/dist/educO";
 import { EsseMenuO } from "lovedicons/dist/esseO";
 import Logo from "./Logo";
+import { useRouter } from "next/navigation";
 
 interface NavbarProps {
   setShowSidebar: React.Dispatch<React.SetStateAction<boolean>>;
@@ -23,11 +24,11 @@ interface NavChild {
   subHeader: string;
   navChild_iconComponent: React.JSX.Element;
   description: string;
+  navLink: string;
 }
 
 interface NavContent {
   navName: string;
-  navLink: string;
   showChevron: boolean;
   iconComponent: React.JSX.Element;
   header: string;
@@ -35,6 +36,7 @@ interface NavContent {
 }
 
 const Navbar: React.FC<NavbarProps> = ({ setShowSidebar }) => {
+  const router = useRouter();
   // const [mounted, setMounted] = useState(false);
   // const [openNavIndex, setOpenNavIndex] = useState<number | null>(null);
 
@@ -46,7 +48,6 @@ const Navbar: React.FC<NavbarProps> = ({ setShowSidebar }) => {
   const navContent: NavContent[] = [
     {
       navName: "What We Do",
-      navLink: "",
       showChevron: true,
       iconComponent: <ArrChevronDownO className="w-4 h-4" />,
       header: "ServiceNow",
@@ -58,6 +59,7 @@ const Navbar: React.FC<NavbarProps> = ({ setShowSidebar }) => {
           ),
           description:
             "Aligning objectives and approaches for process optimization",
+          navLink: "/consult",
         },
         {
           subHeader: "Implement",
@@ -66,6 +68,7 @@ const Navbar: React.FC<NavbarProps> = ({ setShowSidebar }) => {
           ),
           description:
             "Implementing swift resolutions of complex customer issues",
+          navLink: "",
         },
         {
           subHeader: "Support",
@@ -74,6 +77,7 @@ const Navbar: React.FC<NavbarProps> = ({ setShowSidebar }) => {
           ),
           description:
             "High-performance standards guaranteed through the support and stability of robust IT solutions",
+          navLink: "",
         },
         {
           subHeader: "Optimize",
@@ -82,12 +86,12 @@ const Navbar: React.FC<NavbarProps> = ({ setShowSidebar }) => {
           ),
           description:
             "Develop a strategic roadmap to optimize your ServiceNow environment for enhanced efficiency",
+          navLink: "",
         },
       ],
     },
     {
       navName: "Who Are We",
-      navLink: "",
       showChevron: true,
       iconComponent: <ArrChevronDownO className="w-4 h-4" />,
       header: "ServiceNow",
@@ -105,11 +109,13 @@ const Navbar: React.FC<NavbarProps> = ({ setShowSidebar }) => {
           ),
           description:
             "Dyooti is a leading ServiceNow Consulting & Implementation partner to help you leverage the capabilities of ServiceNow to elevate stakeholder experiences",
+          navLink: "",
         },
         {
           subHeader: "Vision, Mission, And Inspiration",
           navChild_iconComponent: <SecuEyeO className="w-5 h-5 text-primary" />,
           description: "An inside look of what keeps us going",
+          navLink: "",
         },
         {
           subHeader: "Meet The Team",
@@ -117,6 +123,7 @@ const Navbar: React.FC<NavbarProps> = ({ setShowSidebar }) => {
             <EducBrifecaseTickO className="w-5 h-5 text-primary" />
           ),
           description: "Let us introduce our remarkable team",
+          navLink: "",
         },
         {
           subHeader: "Culture [CATIE]",
@@ -125,6 +132,7 @@ const Navbar: React.FC<NavbarProps> = ({ setShowSidebar }) => {
           ),
           description:
             "Our value system defines how we extend the best to our clients, employees and stakeholders",
+          navLink: "",
         },
         {
           subHeader: "Careers",
@@ -132,6 +140,7 @@ const Navbar: React.FC<NavbarProps> = ({ setShowSidebar }) => {
             <UserPeopleO className="w-5 h-5 text-primary" />
           ),
           description: "Become a ServiceNow leader of tomorrow, join us today",
+          navLink: "",
         },
         {
           subHeader: "Dyooti Academy",
@@ -140,12 +149,12 @@ const Navbar: React.FC<NavbarProps> = ({ setShowSidebar }) => {
           ),
           description:
             "Dyooti Academy hones the transformative potential of ServiceNow, dedicated to nurturing the next generation of ServiceNow experts",
+          navLink: "",
         },
       ],
     },
     {
       navName: "Resources",
-      navLink: "",
       showChevron: true,
       iconComponent: <ArrChevronDownO className="w-4 h-4" />,
       header: "ServiceNow",
@@ -163,6 +172,7 @@ const Navbar: React.FC<NavbarProps> = ({ setShowSidebar }) => {
           ),
           description:
             "We are committed to delivering quality service to our clients through hand-on support",
+          navLink: "",
         },
         {
           subHeader: "Case Studies",
@@ -171,6 +181,7 @@ const Navbar: React.FC<NavbarProps> = ({ setShowSidebar }) => {
           ),
           description:
             "Real-world success stories to discover how our solutions transform businesses",
+          navLink: "",
         },
         {
           subHeader: "Insights",
@@ -179,6 +190,7 @@ const Navbar: React.FC<NavbarProps> = ({ setShowSidebar }) => {
           ),
           description:
             "Explore the world of Ideas through our engaging blogs on a variety of interesting topics",
+          navLink: "",
         },
         {
           subHeader: "Podcasts",
@@ -187,6 +199,7 @@ const Navbar: React.FC<NavbarProps> = ({ setShowSidebar }) => {
           ),
           description:
             "Tune in for inspiring conversations and engaging stories on our Podcast",
+          navLink: "",
         },
         {
           subHeader: "Webinars",
@@ -195,12 +208,12 @@ const Navbar: React.FC<NavbarProps> = ({ setShowSidebar }) => {
           ),
           description:
             "Plan, deliver, and track value & drive more customer value faster.",
+          navLink: "",
         },
       ],
     },
     {
       navName: "Contact",
-      navLink: "",
       showChevron: false,
       iconComponent: <ArrChevronDownO className="w-4 h-4" />,
       header: "ServiceNow",
@@ -251,7 +264,7 @@ const Navbar: React.FC<NavbarProps> = ({ setShowSidebar }) => {
                 <main
                   className={`absolute bg-secondary invisible group-hover:visible left-0 top-full ${
                     nav.navName === navContent[0].navName ? "px-20" : "px-40"
-                  } pt-20 pb-20 w-full text-start shadow-lg rounded-lg z-50`}
+                  } pt-20 pb-20 w-full text-start shadow-lg z-50`}
                 >
                   {/* <div className="mb-2">{nav.header}</div> */}
                   <section
@@ -264,7 +277,8 @@ const Navbar: React.FC<NavbarProps> = ({ setShowSidebar }) => {
                     {nav.navChild.map((childNav) => (
                       <div
                         key={childNav.subHeader}
-                        className="flex items-start justify-start rounded-md"
+                        className="flex items-start justify-start cursor-pointer"
+                        onClick={() => router.push(childNav.navLink)}
                       >
                         <div className="flex items-center p-2 mt-1">
                           {childNav.navChild_iconComponent}
