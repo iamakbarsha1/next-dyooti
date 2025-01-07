@@ -68,7 +68,7 @@ const Navbar: React.FC<NavbarProps> = ({ setShowSidebar }) => {
           ),
           description:
             "Implementing swift resolutions of complex customer issues",
-          navLink: "",
+          navLink: "/implement",
         },
         {
           subHeader: "Support",
