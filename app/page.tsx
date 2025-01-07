@@ -76,7 +76,7 @@ export default function Home() {
   return (
     <main className="w-screen">
       <section className="relative h-[650px] w-full">
-        <div className="absolute z-40 top-0 left-0 bottom-0 right-0 flex items-center justify-center">
+        <div className="absolute z-30 top-0 left-0 bottom-0 right-0 flex items-center justify-center">
           <div className="h-full flex items-center justify-center text-white text-center">
             <div className="w-full max-w-[950px] flex flex-col items-center justify-center space-y-6 px-4">
               {/* Hero Title */}
