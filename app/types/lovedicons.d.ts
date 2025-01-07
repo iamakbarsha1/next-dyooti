@@ -111,3 +111,7 @@ declare module "lovedicons/dist/arrO" {
   import React from "react";
   export const ArrBasicArrowRightO: React.FC<React.SVGProps<SVGSVGElement>>;
 }
+declare module "lovedicons/dist/esseS" {
+  import React from "react";
+  export const EsseTickCircleS: React.FC<React.SVGProps<SVGSVGElement>>;
+}
