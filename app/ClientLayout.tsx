@@ -74,6 +74,7 @@ import React, { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import Sidebar from "./component/Sidebar";
 import { throttle } from "./utils/function";
+import Footer from "./component/Footer";
 
 const Navbar = dynamic(() => import("./component/Navbar"), {
   ssr: false,
@@ -115,7 +116,7 @@ const ClientLayout = ({ children }: { children: React.ReactNode }) => {
       {/* Overlay */}
       {showSidebar && (
         <div
-          className="fixed inset-0 z-40 bg-black bg-opacity-50 transition-opacity"
+          className="fixed inset-0 z-50 bg-black bg-opacity-50 transition-opacity"
           onClick={handleOverlayClick}
         />
       )}
@@ -131,7 +132,7 @@ const ClientLayout = ({ children }: { children: React.ReactNode }) => {
 
       {/* Navbar with scroll logic */}
       <section
-        className={`fixed top-0 left-0 w-full z-50 transition-transform duration-300 ${
+        className={`fixed top-0 left-0 w-full z-40 transition-transform duration-300 ${
           isScrollingUp ? "translate-y-0" : "-translate-y-full"
         }`}
       >
@@ -140,6 +141,7 @@ const ClientLayout = ({ children }: { children: React.ReactNode }) => {
 
       {/* Children with padding to account for navbar height */}
       <main className="relative pt-[54px] lg:pt-[116px]">{children}</main>
+      <Footer />
     </main>
   );
 };

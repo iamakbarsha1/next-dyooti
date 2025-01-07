@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import Logo from "../Logo";
+import Logo from "./Logo";
 
 const Footer: React.FC = () => {
   const footerData_1 = [
@@ -32,7 +32,7 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <main className="px-8 md:px-12 xl:px-32 py-2 md:py-5 lg:px-10 lg:py-6 max-w-7xl mx-auto grid lg:grid-cols-12">
+    <main className="mt-10 md:mt-6 px-8 md:px-12 xl:px-32 py-2 md:py-5 lg:px-10 lg:py-6 max-w-7xl mx-auto grid lg:grid-cols-12">
       <section className="col-span-6">
         <Logo />
         <div className="mt-4 mb-8 md:mb-10 text-base">
@@ -40,7 +40,7 @@ const Footer: React.FC = () => {
           Reseller partner that integrates transformative expertise with a
           customer-centric perspective.
         </div>
-        <div className="flex">
+        <div className="mb-5 lg:mb-0 flex flex-col md:flex-row">
           <Image
             className="object-cover"
             alt={"badge1"}
@@ -59,7 +59,7 @@ const Footer: React.FC = () => {
           />
         </div>
       </section>
-      <section className="col-span-3">
+      <section className="col-span-6 md:col-span-3">
         {footerData_1.map((_item, index) => (
           <div key={index} className="mb-4">
             <h4 className="font-bold mb-2">{_item.header}</h4>
@@ -78,7 +78,7 @@ const Footer: React.FC = () => {
           </div>
         ))}
       </section>
-      <section className="col-span-3">
+      <section className="col-span-6 md:col-span-3">
         {footerData_2.map((_item, index) => (
           <div key={index} className="mb-4">
             <h4 className="font-bold mb-2">{_item.header}</h4>

@@ -8,7 +8,6 @@ import Testimonials from "./component/landingPage/Testimonials";
 import Insights from "./component/landingPage/Insights";
 import RequestAQuote from "./component/landingPage/RequestAQuote";
 import NewsLetter from "./component/landingPage/NewsLetter";
-import Footer from "./component/landingPage/Footer";
 
 // export default function Home() {
 //   return (
@@ -142,39 +141,6 @@ export default function Home() {
       <Insights />
       <RequestAQuote />
       <NewsLetter />
-      <Footer />
-      {/* dummy */}
-      <section className="mt-5 md:mt-10 my-5 lg:my-[60px] px-5 md:px-12 lg:px-36">
-        <div className="text-[28px] md:text-[32px] font-bold text-center">
-          Our ServiceNow solutions offer exceptional{" "}
-          <br className="hidden md:block" /> performance and come equipped with
-          built-in capabilities
-          {/* performance and come equipped with built-in capabilities */}
-        </div>
-        <section className="mt-10 md:mt-24 gap-5 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
-          {ciso?.map((ciso) => {
-            return (
-              <section key={ciso.name} className="p-10 shadow-xl rounded-3xl">
-                <div>
-                  <Image
-                    alt={ciso.name}
-                    src={ciso.icon}
-                    width={40}
-                    height={40}
-                    // priority={true}
-                    // fill={true}
-                    // className="object-cover object-center"
-                  />
-                </div>
-                <div className="mt-4 mb-7 text-[22px] font-bold">
-                  {ciso.name}
-                </div>
-                <div className="text-base">{ciso.description}</div>
-              </section>
-            );
-          })}
-        </section>
-      </section>
     </main>
   );
 }
