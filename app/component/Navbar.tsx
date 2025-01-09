@@ -77,7 +77,7 @@ const Navbar: React.FC<NavbarProps> = ({ setShowSidebar }) => {
           ),
           description:
             "High-performance standards guaranteed through the support and stability of robust IT solutions",
-          navLink: "",
+          navLink: "/support",
         },
         {
           subHeader: "Optimize",
@@ -86,7 +86,7 @@ const Navbar: React.FC<NavbarProps> = ({ setShowSidebar }) => {
           ),
           description:
             "Develop a strategic roadmap to optimize your ServiceNow environment for enhanced efficiency",
-          navLink: "",
+          navLink: "/optimize",
         },
       ],
     },
